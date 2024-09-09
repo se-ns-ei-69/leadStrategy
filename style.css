@@ -503,7 +503,7 @@ section {
     border: none;
     outline: none;
     text-align: left;
-    /*font-size: 28px;*/
+    font-size: 48px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -908,7 +908,7 @@ section {
     min-height: 100vh;
 }
 .results-container {
-    max-width: 1400px;
+    max-width: 1332px;
     display: flex;
     gap: 2rem;
     flex-direction: column;
@@ -935,7 +935,7 @@ section {
     /*height: 300px;*/
     position: relative;
     border-radius: 25px;
-    padding: 2rem 1rem ;
+    padding: 1rem ;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -1033,9 +1033,19 @@ section {
 }
 
 .about-us-section {
+    /*position: fi;*/
+    height: 100vh;
     scroll-margin-top: 5rem;
     position: relative;
     display: flex;
+    flex-direction: column;
+}
+.background-image {
+    background-image: url("/assets/images/office-photo.jpg");
+    background-position: center;
+    position: absolute;
+    /*position: fixed;*/
+    inset: 0;
 }
 .service-section {
     scroll-margin-top: 5rem;
@@ -1065,7 +1075,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 50%;
+    /*max-width: 50%;*/
     color: white;
 }
 
@@ -1217,11 +1227,11 @@ footer {
 }
 
 footer .footer-wrapper {
-    max-width: 1400px;
+    max-width: 1332px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    /*padding: 60px 0;*/
+    padding: 1rem;
     /*gap: 1rem;*/
 }
 .footer-top {
@@ -1232,6 +1242,11 @@ footer .footer-wrapper {
     justify-content: space-between;
     border-top: 1px solid var(--secondary-light-grey);
     border-bottom: 1px solid var(--secondary-light-grey);
+}
+.footer-top .left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 .footer-bottom {
     display: flex;
@@ -1269,6 +1284,9 @@ footer .footer-wrapper {
 }
 .social-link-list li {
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: white;
 }
 
@@ -1371,9 +1389,6 @@ footer .footer-wrapper {
         justify-content: center;
         padding: 2rem 0;
     }
-    .about-us-section .container {
-        flex-direction: column-reverse;
-    }
     .service-section .container {
         flex-direction: column;
     }
@@ -1452,6 +1467,10 @@ footer .footer-wrapper {
     .contact-form {
         grid-template-columns: repeat(1, 1fr);
     }
+    .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
 /* Планшеты */
@@ -1470,7 +1489,7 @@ footer .footer-wrapper {
 /* Десктоп */
 @media (min-width: 1024px) {
     .about-us-text, .service-text {
-        max-width: 50%;
+        /*max-width: 50%;*/
     }
 
     .sticky-text {
