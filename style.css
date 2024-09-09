@@ -352,6 +352,12 @@ main {
     height: calc(100vh - var(--header-height));
     /*height: calc(100vh - var(--header-height));*/
 }
+.blurred {
+    inset: 0;
+    position: absolute;
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+}
 .company-logo-container {
     display: flex;
     align-items: center;
