@@ -998,7 +998,7 @@ section {
 
 .fixed-background {
     height: 100%;
-    background-image: url("/assets/images/office-photo.jpg");
+    background-image: url("assets/images/office-photo.jpg");
     border-radius: 25px;
     background-position: center;
     background-size: cover;
