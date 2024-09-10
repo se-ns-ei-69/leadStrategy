@@ -1,10 +1,15 @@
 const burgerMenu = document.getElementById('burger-menu');
 const navigation = document.getElementById('nav');
 
-burgerMenu.addEventListener('click', function() {
+burgerMenu.addEventListener('click', function () {
     navigation.classList.toggle('open');
     burgerMenu.classList.toggle('open');
 });
+
+// Function to check if the device is mobile based on screen width
+function isMobileDevice() {
+    return window.innerWidth <= 768; // Adjust the width as needed
+}
 
 //Infinity scroll
 
@@ -68,26 +73,26 @@ function addAnimation() {
 
 //Swiper
 
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-
-let currentIndex = 0;
-
-function updateSlide() {
-    const offset = -currentIndex * 100;
-    document.querySelector('.slide-wrapper').style.transform = `translateX(${offset}%)`;
-}
-
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-    updateSlide();
-});
-
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-    updateSlide();
-});
+// const slides = document.querySelectorAll('.slide');
+// const prevBtn = document.getElementById('prev-btn');
+// const nextBtn = document.getElementById('next-btn');
+//
+// let currentIndex = 0;
+//
+// function updateSlide() {
+//     const offset = -currentIndex * 100;
+//     document.querySelector('.slide-wrapper').style.transform = `translateX(${offset}%)`;
+// }
+//
+// prevBtn.addEventListener('click', () => {
+//     currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+//     updateSlide();
+// });
+//
+// nextBtn.addEventListener('click', () => {
+//     currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+//     updateSlide();
+// });
 
 //scroll zoom
 
@@ -95,15 +100,16 @@ const targetElement = document.getElementById('slogan');
 
 window.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
+        if(isMobileDevice()) {
+            return
+        }
         const scrollPosition = window.scrollY;
-        if (scrollPosition > window.innerHeight/2) {
+        if (scrollPosition > window.innerHeight / 2) {
             targetElement.style.opacity = '0.2';
             targetElement.style.fontSize = '2em';
-            // targetElement.style.transform = 'scale(1)';
         } else {
             targetElement.style.opacity = '1';
             targetElement.style.fontSize = '5em';
-            // targetElement.style.transform = 'scale(2)';
         }
     });
 })
@@ -180,15 +186,11 @@ const sectionObserver = new IntersectionObserver((entries, observer) => {
             setTimeout(() => {
                 headerLogo.style.display = 'none';
             }, 100);
-            // headerLogo.classList.remove('active');
-            // entry.target.classList.add('active');
-            // observer.unobserve(entry.target);
         } else {
             headerLogo.style.display = 'flex';
             setTimeout(() => {
                 headerLogo.style.opacity = '1'
             }, 100);
-            // headerLogo.classList.add('active');
         }
     });
 }, {
@@ -219,8 +221,28 @@ const cardsObserver = new IntersectionObserver((entries, observer) => {
     threshold: 0.5
 });
 
-cardsObserver.observe(cardContainerObserver);
+cardsObserver.observe(cardContainerObserver)
 
+// const pins = document.querySelectorAll('.map-point');
+// const tooltip = document.getElementById('tooltip');
+// pins.forEach(pin => {
+//     pin.addEventListener('mouseenter', function(event) {
+//         const rect = pin.getBoundingClientRect();
+//         tooltip.classList.add('active');
+//
+//         tooltip.style.left = `${rect.left + rect.width / 2}px`;
+//         tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+//         event.stopPropagation();
+//     });
+//     pin.addEventListener('mouseleave', function(event) {
+//         // const rect = pin.getBoundingClientRect();
+//         tooltip.classList.remove('active');
+//
+//         // tooltip.style.left = `${rect.left + rect.width / 2}px`;
+//         // tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+//         event.stopPropagation();
+//     });
+// })
 // window.addEventListener('DOMContentLoaded', () => {
 //     setTimeout(() => {
 //         toggleBackdrop()
@@ -229,21 +251,40 @@ cardsObserver.observe(cardContainerObserver);
 
 // const svgObject = document.getElementById('svgMap');
 // svgObject.addEventListener('load', function() {
-    // const svgDoc = svgObject.getSVGDocument();
-    // if (!svgDoc) {
-    //     return;
-    // }
-    // const pins = svgDoc.querySelectorAll('.map-point')
-    // pins.forEach(pin => {
-    // })
+// const svgDoc = svgObject.getSVGDocument();
+// if (!svgDoc) {
+//     return;
+// }
+// const pins = svgDoc.querySelectorAll('.map-point')
+// pins.forEach(pin => {
+// })
 // });
 
 
-function IsInViewport(t) {
-    let e = t.position();
-    return wh = e.height,
-        h = window.innerHeight,
-    e.top <= h && e.top + wh > 0
-}
+// function IsInViewport(t) {
+//     let e = t.position();
+//     return wh = e.height,
+//         h = window.innerHeight,
+//     e.top <= h && e.top + wh > 0
+// }
+
+
+ document.addEventListener("DOMContentLoaded", function(event) {
+    const handleFixVideos = () => {
+        let userAgentString = navigator.userAgent;
+        let chromeAgent = userAgentString.indexOf('Chrome') > -1;
+        let safariAgent = userAgentString.indexOf('Safari') > -1;
+        if ((chromeAgent) && (safariAgent)) safariAgent = false;
+        const video = document.getElementById('services-video');
+        const videos = document.querySelectorAll('video');
+        if (videos.length > 0) {
+            if (safariAgent) {
+                video.setAttribute('src', '/assets/videos/fixed-earth-mov.mov')
+            }
+        }
+    };
+    handleFixVideos();
+});
+
 
 

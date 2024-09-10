@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body style="min-height: 100vh;display: flex;flex-direction: column;">
 <header class="header">
     <div class="header-container">
         <div style="position: absolute; z-index: 2; inset: 0; background-color: #0c142a"></div>
@@ -18,12 +18,13 @@
                     <li><a class="nav-link" href="index.html#service-section">Service</a></li>
                     <li><a class="nav-link" href="index.html#about-us-section">About us</a></li>
                     <li><a class="nav-link" id="pricing-link" href="index.html#pricing-section">Pricing</a></li>
-                    <li><a href="index.html#form-section" class="menu-button brand-button-rounded modal-toggle">Get Started</a></li>
+                    <li><a class="nav-link" href="contacts.html">Contact us</a></li>
+                    <li><a href="index.html#pricing-section" class="menu-button brand-button-rounded modal-toggle">Get Started</a></li>
                     <!--                    <li><a class="nav-link text-grey menu-button" href="privacy-policy.html">Privacy policy</a></li>-->
                 </ul>
             </nav>
         </div>
-        <a href="#form-section" class="header-button brand-button-rounded modal-toggle">Get Started</a>
+        <a style="pointer-events: none" href="index.html#form-section" class="header-button brand-button-rounded modal-toggle">Get Started</a>
         <div class="burger-menu" id="burger-menu">
             <span></span>
             <span></span>
@@ -31,9 +32,80 @@
         </div>
     </div>
 </header>
-<main>
+<main style="flex:1; justify-content: center">
     <section class="contacts-section">
-        <div class="contacts-container">
+        <div class="subheader-wrapper"><h2 class="gradient-h">Contact Us</h2></div>
+        <div class="container">
+            <div class="row-wrapper">
+                <div class="footer-item" style="font-size: 16px">
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem">
+                        <div style="display: flex; gap: 1rem">
+                            <p style="width: 120px; color: #cccccc80">Company name:</p>
+                            <p>PETIGOL SOFTWARE ENGINEERING INC</p>
+                        </div>
+                        <div style="display: flex; gap: 1rem">
+                            <p style="width: 120px; color: #cccccc80">Location</p>
+                            <div style="display: flex; flex-direction: column">
+                                <p>9 E LOOCKERMAN STREET SUITE 311</p>
+                                <p>DOVER, DE 19901</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem">
+                            <p style="width: 120px; color: #cccccc80">Phone</p>
+                            <a class="nav-link" href="tel:+1 (754) 217-0222">
+                                +1 (754) 217-0222
+                            </a>
+                        </div>
+                        <div style="display: flex; gap: 1rem">
+                            <p style="width: 120px; color: #cccccc80">Web site:</p>
+                            <a class="nav-link" href="leadstratedwoomall.com" target="_blank">leadstratedwoomall.com</a>
+                        </div>
+                    </div>
+                </div>
+                <section>
+                        <div class="contact-form-wide">
+<!--                            <div class="left-section">-->
+<!--                                <h2 class="section-heading">Let’s find the right <mark class="brand-color-wrap">solution</mark> for you!</h2>-->
+<!--                                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: auto">-->
+
+<!--                                    <a class="mailto-link" href="mailto:leadstrategy@gmail.com">-->
+<!--                                        <div class="mailto-img-wrapper">-->
+<!--                                            <img src="assets/images/email-svgrepo-com.svg" width="40" height="40" alt="email" />-->
+<!--                                        </div>-->
+<!--                                        leadstrategy@gmail.com-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        <form class="contact-us-form" action="contact.php" method="POST">
+                            <div class="form-line">
+                                <div>
+                                    <input class="contact-form-input" type="text" name="name" id="name" placeholder="First Name" required>
+                                </div>
+                                <div>
+                                    <input class="contact-form-input" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="form-line">
+                                <div>
+                                    <input class="contact-form-input" type="email" name="email" placeholder="Email" required>
+                                </div>
+                                <div>
+                                    <input class="contact-form-input" type="tel" name="phone" placeholder="Phone" required>
+                                </div>
+                            </div>
+                            <div>
+                                <input class="contact-form-input" type="text" name="companyName" placeholder="Company name">
+                            </div>
+                            <div class="form-line">
+                                <textarea class="contact-form-input" placeholder="Message" id="textarea"></textarea>
+                            </div>
+                            <div class="button-wrapper">
+                                <button type="submit" class="brand-button-rounded modal-toggle mt-12">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
         </div>
     </section>
 </main>
@@ -41,52 +113,102 @@
     <div class="footer-wrapper">
         <section class="footer-top">
             <div class="left-section">
-                <img src="assets/images/Vector.svg" alt="logo" width="200"/>
+
             </div>
             <div class="right-section">
                 <section class="footer-item">
+                    <h4 class="subheading small">Services</h4>
+                    <ul class="social-link-list">
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Smm
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Contextual advertising
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Targeting advertising
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            SEO
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Website development
+                        </li>
+                    </ul>
+                </section>
+                <section class="footer-item">
                     <h4 class="subheading small">Location</h4>
                     <ul class="social-link-list">
-                        <li>Miami</li>
-                        <li>Kyiv</li>
-                        <li>Lviv</li>
-                        <li>Delaware</li>
-                        <li>Los Angeles</li>
-                        <li>New York</li>
-                        <li>Warsaw</li>
-                        <li>Dnipro</li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Miami
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Delaware
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Los Angeles
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            New York
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Kyiv
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Lviv
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Dnipro
+                        </li>
+                        <li>
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            Warsaw
+                        </li>
                     </ul>
                 </section>
                 <section class="footer-item">
-                    <h4 class="subheading small">Who we are</h4>
-                    <ul class="social-link-list">
-                        <li><a class="nav-link" href="index.html#about-us-section">About us</a></li>
-                        <li><a class="nav-link" href="contacts.html">Contact us</a></li>
-                    </ul>
-                </section>
-                <section class="footer-item">
-                    <h4 class="subheading small">Follow Us</h4>
+                    <h4 class="subheading small">Company</h4>
                     <ul class="social-link-list">
                         <li>
-                            <a class="nav-link" href="https://facebook.com" target="_blank">Facebook</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="https://instagram.com" target="_blank">Instagram</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="https://tiktok.com" target="_blank">Tiktok</a>
+                            <img src="assets/images/arrow-right-svgrepo-com.svg" width="20px" alt="arrow-right" />
+                            <a class="nav-link" href="#about-us-section">About us</a>
                         </li>
                     </ul>
                 </section>
-                <!--                <div>-->
-                <!--                    <input type="checkbox">-->
-                <!--                </div>-->
-                <!--                <p>I agree to the processing of my information as explained in the Privacy Policy.</p>-->
+                <!--                <section class="footer-item">-->
+                <!--                    <h4 class="subheading small">Follow Us</h4>-->
+                <!--                    <ul class="social-link-list">-->
+                <!--                        <li>-->
+                <!--                            <img src="assets/images/arrow-right-svgrepo-com.svg" width="20px" alt="arrow-right" />-->
+                <!--                            <a class="nav-link" href="https://facebook.com" target="_blank">Facebook</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <img src="assets/images/arrow-right-svgrepo-com.svg" width="20px" alt="arrow-right" />-->
+                <!--                            <a class="nav-link" href="https://instagram.com" target="_blank">Instagram</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <img src="assets/images/arrow-right-svgrepo-com.svg" width="20px" alt="arrow-right" />-->
+                <!--                            <a class="nav-link" href="https://tiktok.com" target="_blank">Tiktok</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </section>-->
             </div>
         </section>
         <section class="footer-bottom">
-            <a class="nav-link text-grey" href="privacy-policy.html">Privacy policy</a>
-            <p class="copyright-text">© 2024</p>
+            <a class="nav-link text-grey small" href="privacy-policy.html">Privacy policy</a>
+            <p class="copyright-text small">© 2024</p>
         </section>
     </div>
 </footer>
