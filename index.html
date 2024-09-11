@@ -146,7 +146,7 @@
         <div class="container justify-space-between align-center">
             <div class="row-wrapper">
                 <div class="video-wrapper">
-                    <video id="services-video" autoplay loop muted width="100%" height="100%">
+                    <video id="services-video" autoplay loop muted playsinline width="100%" height="100%">
                         <source src="assets/videos/earth-video.webm">
                     </video>
                 </div>
@@ -330,42 +330,72 @@
         </section>
     </section>
 
-    <section class="swiper-section">
+    <section class="testimonials-section">
         <div class="container column">
             <div class="subheader-wrapper"><h2 class="gradient-h">Testimonials</h2></div>
             <div class="wrapper">
                 <div class="column">
                     <div class="bubble-wrapper">
                         <div class="bubble received">
-                            <p>Objective: Increase product sales for the client.</p>
-                            <p>Steps Completed:
-                            <p>1. Established sales storefronts on Facebook and Instagram, supported by targeted advertising campaigns designed to boost product sales for the client.</p>
-                            <p>2. Developed campaigns aimed at directing users to the website, enhancing the potential for further product sales.
-                            </p>
+                            <div style="display: flex;flex-direction: column;">
+                                <p style="font-weight: 600">Objective:</p>
+                                <p>Increase product sales for the client.</p>
+                            </div>
+                            <div style="display: flex;flex-direction: column;">
+                                <p style="font-weight: 600">Steps Completed:</p>
+                                <div style="display: flex; gap: 0.5rem; align-items: flex-start">
+                                    <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
+                                    <p>
+                                        Established sales storefronts on Facebook and Instagram, supported by targeted advertising campaigns designed to boost product sales for the client.
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem; align-items: flex-start">
+                                    <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
+                                    <p>
+                                        Developed campaigns aimed at directing users to the website, enhancing the potential for further product sales.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div style="display: flex; gap: 1rem; align-items: center">
-                            <img style="border-radius: 50%; object-fit: contain;" width="75px" height="75px" src="assets/images/review-person-1.jpeg" alt="Kateryna Chuichenko">
+                            <img style="border-radius: 50%; object-fit: contain;" width="75px" height="75px" src="assets/images/review-person-1.jpeg" alt="Aleksandr Berezyuk photo">
                             <div style="display: flex; flex-direction: column; line-height: 1.4">
                                 <p>Aleksandr Berezyuk</p>
                                 <p style="color: #cccccc50">CEO  in Buffet</p>
-                                <img src="assets/images/bufet.svg" width="50px">
+                                <img src="assets/images/bufet.svg" width="50px" alt="Buffet logo">
                             </div>
                         </div>
                     </div>
                     <div class="bubble-wrapper">
                         <div class="bubble received">
-                            <p>Objective: Increase product sales for the client.</p>
-                            <p>Steps Completed:
-                            <p>1. Sales storefronts were created on Facebook and Instagram, accompanied by advertising campaigns aimed at driving product sales for the client.  </p>
-                            <p>2. Campaigns were developed to direct users to the website, with the goal of further facilitating product sales.
-                            </p>
+                            <div style="display: flex;flex-direction: column;">
+                                <p style="font-weight: 600">Objective:</p>
+                                <p>Increase product sales for the client.</p>
+                            </div>
+                            <div style="display: flex;flex-direction: column;">
+                                <p style="font-weight: 600">
+                                    Steps Completed:
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; align-items: flex-start">
+                                    <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
+                                    <p>
+                                        Sales storefronts were created on Facebook and Instagram, accompanied by advertising campaigns aimed at driving product sales for the client.
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem; align-items: flex-start">
+                                    <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
+                                    <p>
+                                        Campaigns were developed to direct users to the website, with the goal of further facilitating product sales.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div style="display: flex; gap: 1rem; align-items: center">
-                            <img style="border-radius: 50%; object-fit: contain;" width="75px" height="75px" src="assets/images/review-person-3.jpeg" alt="Kateryna Chuichenko">
+                            <img style="border-radius: 50%; object-fit: contain;" width="75px" height="75px" src="assets/images/review-person-3.jpeg" alt="Kateryna Chuichenko photo">
                             <div style="display: flex; flex-direction: column; line-height: 1.4">
                                 <p>Kateryna Chuichenko</p>
                                 <p style="color: #cccccc50">CEO & Founder in Djinni</p>
-                                <img src="assets/images/djinni.svg" width="50px">
+                                <img src="assets/images/djinni.svg" width="50px" alt="djinni logo">
                             </div>
                         </div>
                     </div>
@@ -391,19 +421,19 @@
                                 Steps Completed:
                             </p>
                             <div style="display: flex; gap: 0.5rem; align-items: center">
-                                <img src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px"/>
+                                <img src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
                                 <p>
                                     Conducted a detailed analysis of the existing ad campaigns.
                                 </p>
                             </div>
                             <div style="display: flex; gap: 0.5rem; align-items: flex-start">
-                                <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px"/>
+                                <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
                                 <p>
                                     Launched and optimized Google Ads campaigns, scaling them after successful tests to drive more traffic to the website.
                                 </p>
                             </div>
                             <div style="display: flex; gap: 0.5rem; align-items: flex-start">
-                                <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px"/>
+                                <img style="transform: translateY(5px)" src="assets/images/checked-success-svgrepo-com.svg" width="15px" height="15px" alt="checked icon"/>
                                 <p>
                                     Developed engaging visuals for social media promotions, tested different versions, and focused the budget on the best-performing ads .
                                 </p>
@@ -417,11 +447,11 @@
                         </div>
                     </div>
                     <div style="display: flex; gap: 1rem; align-items: center">
-                        <img style="border-radius: 50%; object-fit: contain;" width="75px" height="75px" src="assets/images/review-person-2.jpeg" alt="Kateryna Chuichenko">
+                        <img style="border-radius: 50%; object-fit: contain;" width="75px" height="75px" src="assets/images/review-person-2.jpeg" alt="Serhii Kravchuk photo">
                         <div style="display: flex; flex-direction: column; line-height: 1.4">
                             <p>Serhii Kravchuk</p>
                             <p style="color: #cccccc50">Co - Founder in Metal print</p>
-                            <img src="assets/images/Metal_print_logo.svg" width="50px">
+                            <img src="assets/images/Metal_print_logo.svg" width="50px" alt="metal print logo">
                         </div>
                     </div>
                 </div>
@@ -704,7 +734,7 @@
                     </circle>
 
                     <circle id="kyiv-pin" class="map-point" cx="110" cy="21" r="1" fill="#FF6F3C" />
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 transform: translateZ(0);
@@ -717,7 +747,7 @@
                         </foreignObject>
                         <text font-size="3" font-weight="600" x="51" y="16">Delaware</text>
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                             backdrop-filter: drop-shadow(3px 5px 4px rgb(0 0 0 / 0.7));
@@ -734,7 +764,7 @@
                         <text font-size="3" font-weight="400" x="46" y="24">Usa</text>
                         <polygon points="39,26 43,26 41,29" fill="white" />
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 -webkit-filter: drop-shadow( 3px 3px 4px rgb(0 0 0 / 0.7));
@@ -748,7 +778,7 @@
                         <text font-size="3" font-weight="400" x="16" y="24">Usa</text>
                         <polygon points="13,26 17,26 15,29" fill="white" />
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 -webkit-filter: drop-shadow( 3px 3px 4px rgba(0, 0, 0, 0.7));
@@ -762,7 +792,7 @@
                         <text font-size="3" font-weight="400" x="43" y="48">Usa</text>
                         <polygon points="38,39 36,42 40,42" fill="white" />
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 -webkit-filter: drop-shadow( 3px 3px 4px rgba(0, 0, 0, 0.7));
@@ -775,7 +805,7 @@
                         <text font-size="3" font-weight="600" x="114" y="28">Dnipro</text>
                         <polygon points="110,22 108,25 112,25" fill="white" />
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 -webkit-filter: drop-shadow( 3px 3px 4px rgba(0, 0, 0, 0.7));
@@ -787,7 +817,7 @@
                         </foreignObject>
                         <text font-size="3" font-weight="600" x="119" y="33">Lviv</text>
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 -webkit-filter: drop-shadow( 3px 3px 4px rgba(0, 0, 0, 0.7));
@@ -800,7 +830,7 @@
                         <text font-size="3" font-weight="600" x="124" y="38">Kyiv</text>
                         <text font-size="3" font-weight="400" x="124" y="41">Ukraine</text>
                     </g>
-                    <g>
+                    <g class="map-pin">
                         <rect
                             style="
                                 -webkit-filter: drop-shadow( 3px 3px 4px rgba(0, 0, 0, 0.7));
@@ -815,25 +845,11 @@
                         <polygon points="103,16 107,16 105,19" fill="white" />
                     </g>
                 </svg>
-                <div
-                    style="
-                    position: relative;
-                    display: none;
-                    flex-direction: column;
-                    background-color: rgba(255,255,255,0.31);
-                    backdrop-filter: blur(8px);
-                    border-radius: 25px;
-                    height: 400px;
-                    transform: translateY(-100px);
-                    overflow: hidden;
-                ">
-                    <div style="position: absolute; top: 20%; left: 0; right: 0;background-color: #1a234d; height: 100%; display: flex; flex-direction: column; padding: 1rem;">
-                        <div style="display: flex; align-items: center;gap: 0.5rem">
-                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
-                            <p class="">
-                                Kyiv
-                            </p>
-                        </div>
+                <div class="map-details">
+                    <div style="width: 80px; height: 80px;position: absolute; right: 1rem; top: 40px; z-index: 1; display: flex;align-items: center; justify-content: center; border-radius: 50%; background-color: #1a234d">
+                        <img src="assets/images/office-map-icon.svg" alt="office-map-icon" width="50px">
+                    </div>
+                    <div style="line-height: 1.6;position: absolute; top: 80px; left: 0; right: 0;background-color: #1a234d; height: 100%; display: flex; flex-direction: column; padding: 1rem;">
                         <div style="display: flex; align-items: center;gap: 0.5rem">
                             <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
                             <p class="">
@@ -844,6 +860,42 @@
                             <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
                             <p class="">
                                 New York
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center;gap: 0.5rem">
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            <p class="">
+                                Delaware
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center;gap: 0.5rem">
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            <p class="">
+                                Los Angeles
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center;gap: 0.5rem">
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            <p class="">
+                                Lviv
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center;gap: 0.5rem">
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            <p class="">
+                                Kyiv
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center;gap: 0.5rem">
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            <p class="">
+                                Dnipro
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center;gap: 0.5rem">
+                            <div style="width: 4px; height: 4px; background-color: #FF6F3C; border-radius: 50%"></div>
+                            <p class="">
+                                Warsaw
                             </p>
                         </div>
                     </div>
