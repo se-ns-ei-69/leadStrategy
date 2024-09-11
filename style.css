@@ -1114,6 +1114,15 @@ section {
     clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
 }
 
+.contacts-section {
+    display: flex;
+    flex-direction: column;
+}
+.contact-row {
+    display: flex;
+    gap: 1rem;
+}
+
 footer {
     flex: 0;
     background-color: var(--secondary-dark-grey);
@@ -1454,12 +1463,6 @@ h3 {
     }
 }
 
-.contacts-section {
-    display: flex;
-    flex-direction: column;
-}
-
-
 @media screen and (max-width: 991px) {
     body {
         font-size: 20px;
@@ -1639,6 +1642,10 @@ h3 {
 }
 
 @media (max-width: 600px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 0;
+    }
     .results-cards-container {
         grid-template-columns: 1fr;
     }

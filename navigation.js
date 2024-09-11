@@ -5,6 +5,7 @@ const body = document.body;
 burgerMenu.addEventListener('click', function () {
     navigation.classList.toggle('open');
     burgerMenu.classList.toggle('open');
+
     if (burgerMenu.classList.contains('open')) {
         body.classList.add('disable-scroll');
     } else {
