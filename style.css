@@ -209,6 +209,9 @@ body {
 .scroll-wrapper {
     height: 100vh;
 }
+.disable-scroll {
+    overflow: hidden;
+}
 .masked-image {
     /*height: 160px;*/
     width: 100%;
@@ -258,12 +261,9 @@ body {
     align-items: center;
 }
 .header-logo {
-    /*display: none;*/
     width: 144px;
     z-index: 3;
     transition: opacity 0.5s;
-    /*opacity: 0;*/
-    /*transition: opacity 0.5s;*/
 }
 .header-logo:hover {
     cursor: pointer;
@@ -1636,6 +1636,10 @@ h3 {
     }
     .header-button {
         display: none;
+    }
+    .header-logo {
+        opacity: 1;
+        display: flex;
     }
     .menu-button {
         display: flex;

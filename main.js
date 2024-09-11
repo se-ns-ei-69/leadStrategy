@@ -4,6 +4,12 @@ const navigation = document.getElementById('nav');
 burgerMenu.addEventListener('click', function () {
     navigation.classList.toggle('open');
     burgerMenu.classList.toggle('open');
+    const body = document.body;
+    if (burgerMenu.classList.contains('open')) {
+        body.classList.add('disable-scroll');
+    } else {
+        body.classList.remove('disable-scroll');
+    }
 });
 
 // Function to check if the device is mobile based on screen width
@@ -123,6 +129,9 @@ const observerHeroSection = document.getElementById('hero-section');
 const headerLogo = document.getElementById('header-logo');
 
 const sectionObserver = new IntersectionObserver((entries, observer) => {
+    if(isMobileDevice()) {
+        return
+    }
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             headerLogo.style.opacity = '0'
@@ -151,7 +160,7 @@ const cardsObserver = new IntersectionObserver((entries, observer) => {
             cards.forEach(el => {
                 el.classList.add('show')
             })
-            // observer.unobserve(entry.target);
+            observer.unobserve(entry.target);
         } else {
             cards.forEach(el => {
                 el.classList.remove('show')
@@ -174,7 +183,7 @@ cardsObserver.observe(cardContainerObserver)
         const videos = document.querySelectorAll('video');
         if (videos.length > 0) {
             if (safariAgent) {
-                video.setAttribute('src', '/assets/videos/fixed-earth-mov.mov')
+                video.setAttribute('src', 'assets/videos/fixed-earth-mov.mov')
             }
         }
     };
