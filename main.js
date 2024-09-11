@@ -12,6 +12,14 @@ burgerMenu.addEventListener('click', function () {
     }
 });
 
+const menuLinks = document.querySelectorAll('.menu-link');
+menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        navigation.classList.toggle('open');
+        burgerMenu.classList.toggle('open');
+    });
+});
+
 // Function to check if the device is mobile based on screen width
 function isMobileDevice() {
     return window.innerWidth <= 768; // Adjust the width as needed
@@ -168,7 +176,7 @@ const cardsObserver = new IntersectionObserver((entries, observer) => {
         }
     });
 }, {
-    threshold: 0.5
+    threshold: 0.2
 });
 
 cardsObserver.observe(cardContainerObserver)
