@@ -71,29 +71,6 @@ function addAnimation() {
 //     }
 // });
 
-//Swiper
-
-// const slides = document.querySelectorAll('.slide');
-// const prevBtn = document.getElementById('prev-btn');
-// const nextBtn = document.getElementById('next-btn');
-//
-// let currentIndex = 0;
-//
-// function updateSlide() {
-//     const offset = -currentIndex * 100;
-//     document.querySelector('.slide-wrapper').style.transform = `translateX(${offset}%)`;
-// }
-//
-// prevBtn.addEventListener('click', () => {
-//     currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-//     updateSlide();
-// });
-//
-// nextBtn.addEventListener('click', () => {
-//     currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-//     updateSlide();
-// });
-
 //scroll zoom
 
 const targetElement = document.getElementById('slogan');
@@ -113,23 +90,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 })
-
-// const observerH1 = document.getElementById('slogan');
-// window.addEventListener('DOMContentLoaded', () => {
-//     const h1Observer = new IntersectionObserver((entries, observer) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 observerH1.style.fontSize = '144px';
-//             } else {
-//                 observerH1.style.fontSize = '72px';
-//             }
-//         });
-//     }, {
-//         threshold: 0.5
-//     });
-//     h1Observer.observe(observerH1);
-// })
-
 
 // Accordion list
 
@@ -158,23 +118,6 @@ accordionHeaders.forEach(header => {
         });
     });
 });
-
-//Observer
-
-// const observerTarget = document.getElementById('price-card');
-//
-// const observer = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('active');
-//             observer.unobserve(entry.target);
-//         }
-//     });
-// }, {
-//     threshold: 0.5
-// });
-//
-// observer.observe(observerTarget);
 
 const observerHeroSection = document.getElementById('hero-section');
 const headerLogo = document.getElementById('header-logo');
@@ -205,13 +148,11 @@ const cards = document.querySelectorAll('.card');
 const cardsObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            console.log('isIntersecting')
             cards.forEach(el => {
                 el.classList.add('show')
             })
             // observer.unobserve(entry.target);
         } else {
-            console.log('isIntersecting - No!')
             cards.forEach(el => {
                 el.classList.remove('show')
             })
@@ -222,52 +163,6 @@ const cardsObserver = new IntersectionObserver((entries, observer) => {
 });
 
 cardsObserver.observe(cardContainerObserver)
-
-// const pins = document.querySelectorAll('.map-point');
-// const tooltip = document.getElementById('tooltip');
-// pins.forEach(pin => {
-//     pin.addEventListener('mouseenter', function(event) {
-//         const rect = pin.getBoundingClientRect();
-//         tooltip.classList.add('active');
-//
-//         tooltip.style.left = `${rect.left + rect.width / 2}px`;
-//         tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
-//         event.stopPropagation();
-//     });
-//     pin.addEventListener('mouseleave', function(event) {
-//         // const rect = pin.getBoundingClientRect();
-//         tooltip.classList.remove('active');
-//
-//         // tooltip.style.left = `${rect.left + rect.width / 2}px`;
-//         // tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
-//         event.stopPropagation();
-//     });
-// })
-// window.addEventListener('DOMContentLoaded', () => {
-//     setTimeout(() => {
-//         toggleBackdrop()
-//     }, 10000)
-// })
-
-// const svgObject = document.getElementById('svgMap');
-// svgObject.addEventListener('load', function() {
-// const svgDoc = svgObject.getSVGDocument();
-// if (!svgDoc) {
-//     return;
-// }
-// const pins = svgDoc.querySelectorAll('.map-point')
-// pins.forEach(pin => {
-// })
-// });
-
-
-// function IsInViewport(t) {
-//     let e = t.position();
-//     return wh = e.height,
-//         h = window.innerHeight,
-//     e.top <= h && e.top + wh > 0
-// }
-
 
  document.addEventListener("DOMContentLoaded", function(event) {
     const handleFixVideos = () => {
@@ -286,5 +181,20 @@ cardsObserver.observe(cardContainerObserver)
     handleFixVideos();
 });
 
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+};
+
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 

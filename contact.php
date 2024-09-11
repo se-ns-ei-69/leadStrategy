@@ -1,5 +1,4 @@
 <?php
-// Подключаем PHPMailer
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';
@@ -12,30 +11,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    // Создаем новый объект PHPMailer
+    // create object PHPMailer
     $mail = new PHPMailer(true);
 
     try {
-        // Настройки SMTP сервера
         $mail->isSMTP();
-        $mail->Host = 'smtp.example.com';          // SMTP сервер
+        $mail->Host = 'smtp.example.com';          // SMTP server
         $mail->SMTPAuth = true;
-        $mail->Username = 'your_email@example.com';  // Ваш SMTP логин
-        $mail->Password = 'your_password';           // Ваш SMTP пароль
-        $mail->SMTPSecure = 'tls';                   // Шифрование
-        $mail->Port = 587;                           // TCP порт для TLS
+        $mail->Username = 'your_email@example.com';  // SMTP login
+        $mail->Password = 'your_password';           // SMTP pass
+        $mail->SMTPSecure = 'tls';                   // Security
+        $mail->Port = 587;                           // TCP port for TLS
 
-        // От кого письмо
-        $mail->setFrom('no-reply@example.com', 'Website Contact Form');
-        // Кому отправить
-        $mail->addAddress('your_email@example.com');  // Ваш email для получения сообщения
+        $mail->setFrom('no-reply@example.com', 'Lead Strategy Contact Form');
+        $mail->addAddress('test-email@leadstrategy.com');
 
-        // Тема и тело письма
+        // mail theme
         $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission';
         $mail->Body    = "<b>Name:</b> $name <br><b>Email:</b> $email <br><b>Message:</b> $message";
 
-        // Отправляем письмо
+        // send mail
         $mail->send();
         echo 'Message has been sent';
     } catch (Exception $e) {
